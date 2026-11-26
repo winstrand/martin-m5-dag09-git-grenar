@@ -64,6 +64,12 @@ Jag valde att lägga till båda för att sedan ändra till ett helt nytt värde 
 
 Vad är skillnaden mellan `git restore`, `git revert` och `git reset`? Vilken är säkrast när ändringen redan är pushad?
 
+revert - Är säkrast och ger mest spårbarhet... då den tarbort commiten men sparar den, så den finns kvar i historiken.
+
+restore - Är bra om man INTE har commitat, för den återställer till senaste commitade läget för fil/bibliotek eller hela reprot.
+
+rset - Är en sista utvägen lösning, den bör man inte använda då den tarbort alla spår och är oåterkallerlig!
+
 ## 5. Pull request
 
 Länk till din pull request (på ditt eget repo):
