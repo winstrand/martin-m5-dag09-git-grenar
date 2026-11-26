@@ -19,22 +19,46 @@ $ git log --oneline --graph --all
 Klistra in `git log --oneline --graph --all` efter merge:
 
 ```
-(klistra in)
+$ git log --oneline --graph --all
+*   f962648 (HEAD -> main) Merge branch 'meny-nyheter'
+|\
+| * 827db04 (meny-nyheter) Lägg till te på menyn.
+* | 8ec2815 Lägg till telefonnummer
+|/
+* 5a5841d (origin/main, origin/HEAD) Modul 5 i TypeScript med Vite
+* 3804533 Add files via upload
+* f7a13a4 Add files via upload
+* c9a0075 Initial commit
 ```
 
 Fråga: Vad är skillnaden mellan en _fast-forward_-merge och en merge som skapar en egen merge-commit? Svara med egna ord:
+fast-forward 'rätar' ut main så att det är en rak linje, då det inte finns några andra som blokerar. I annat fall så ligger ändringarna parallellt och då får man en 'båge' som visar att det är två olika spår
 
 ## 3. Konflikten
 
 Klistra in filen med konfliktmarkörerna, precis som den såg ut innan du löste den:
 
 ```
-(klistra in)
+# Öppettider
+
+Vardagar: 07–18
+<<<<<<< HEAD
+Helger: 10–17
+=======
+Helger: 09–18
+>>>>>>> oppettider-sommar
+Röda dagar: stängt
+
 ```
 
 Fråga: Vad betyder `<<<<<<< HEAD`, `=======` och `>>>>>>> grennamn`?
+<<<< - Visar var HEAD (huvud branchens) innehåll börjar i konflikten
+==== - Visar var HEAD slutar och nästa börjar i konflikten
+
+> > > > - Visar var grenens unika delar i konflikten slutar
 
 Hur löste du den, och varför blev det så?
+Jag valde att lägga till båda för att sedan ändra till ett helt nytt värde på raden som diffade
 
 ## 4. Ångra
 
