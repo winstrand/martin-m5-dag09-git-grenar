@@ -1,3 +1,7 @@
 .env
 debug.log
+## Jag har inte lagt till den avslutande /, då den explicit riktar det till en katalog utelämnar man den 
+## kan det vara en sym-länk. Kanske inte så vanligt för node_modules en andra kataloger kan vara det
+## och då läggs de till fast de inte skall. 
 node_modules
+*.log 
